@@ -1,11 +1,21 @@
 import { useState } from "react"
+import { saveUser } from "../services/authServices";
 
 export default function (){
     const [email,setEmail] = useState<string>("");
     const [password,setPassword] = useState<string>("");
 
-    const handleSubmit = (e:any)=>{
-        e.preventDefault;
+    const handleSubmit = async(e:any)=>{
+        e.preventDefault();
+
+        try {
+            const addUser = await saveUser(email,password);
+            alert('User added');
+
+        } catch (error) {
+            throw error; 
+            alert('Failed to insert')           
+        }
 
         const newEmail = email;
         const newPassWord= password;
