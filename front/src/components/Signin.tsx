@@ -15,7 +15,7 @@ const handleSubmit = async(e: any) =>{
             if(data.success){
                 navigate("/hello")
             }else{
-                alert("Authentification failed")
+                alert("Authentification faileddd")
             }
             
     } catch (error) {
