@@ -3,15 +3,21 @@ package com.backend.appSpring.ServicesTest.TestIntegrationServices;
 import com.backend.appSpring.Models.User;
 import com.backend.appSpring.Repository.UserRepository;
 import com.backend.appSpring.Services.UserServices;
+import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.annotation.DirtiesContext;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
 @AutoConfigureMockMvc
+@TestMethodOrder(MethodOrderer.Alphanumeric.class)
+@DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
+
 public class TestIntegrationUserService {
 
     @Autowired
