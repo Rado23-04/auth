@@ -9,10 +9,22 @@ on:
     branches:
       - main
       - develop
+      
+
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    
+    services:
+      postgres:
+        image: postgres:latest
+        env:
+          POSTGRES_DB: auth
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: password
+        ports:
+          - 5432:5432
 
     steps:
       - name: Checkout code
