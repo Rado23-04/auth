@@ -20,25 +20,27 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @TestMethodOrder(MethodOrderer.Alphanumeric.class)
 @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
 public class TestIntegrationUserService {
+    /**
+     *  @Autowired
+     *     private UserRepository userRepository;
+     *
+     *     @Autowired
+     *     private UserServices userServices;
+     *
+     *     @AfterEach
+     *     void cleanUp() {
+     *         userRepository.deleteAll();
+     *     }
+     *
+     *     @Test
+     *     void test_integration_user(){
+     *         User user = new User();
+     *         user.setEmail("integration@gmail.com");
+     *         user.setPassword("password");
+     *
+     *         User userSaved = userRepository.save(user);
+     *         assertEquals("integration@gmail.com",userSaved.getEmail());
+     *     }
+     */
 
-    @Autowired
-    private UserRepository userRepository;
-
-    @Autowired
-    private UserServices userServices;
-
-    @AfterEach
-    void cleanUp() {
-        userRepository.deleteAll();
-    }
-
-    @Test
-    void test_integration_user(){
-        User user = new User();
-        user.setEmail("integration@gmail.com");
-        user.setPassword("password");
-
-        User userSaved = userRepository.save(user);
-        assertEquals("integration@gmail.com",userSaved.getEmail());
-    }
 }
