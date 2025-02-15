@@ -23,6 +23,7 @@ jobs:
 
       - name: Construire avec Maven et exécuter les tests
         run: mvn clean verify
+        working-directory: Auth/appSpring
 
       - name: Générer le rapport de couverture
         run: mvn jacoco:report
