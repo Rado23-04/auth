@@ -22,9 +22,9 @@ jobs:
           cache: 'maven'
 
       - name: Construire avec Maven et exécuter les tests
-        run: mvn clean verify
-        working-directory: Auth/appSpring
-
+        run: |
+          cd Auth/appSpring 
+          mvn clean verify
       - name: Générer le rapport de couverture
         run: mvn jacoco:report
 
